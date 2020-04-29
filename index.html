@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Timed Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="Start">View High Scores</div>
+    <div id="quiz" style="display : none;">
+        <div id="question"><p>Question</p></div>
+        <div id="timer">
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+        </div>
+
+        <div id="choices">
+            <div class="choice" id="A" onclick="checkAnswer('A')">A</div>"
+            <div class="choice" id="B" onclick="checkAnswer('B')">A</div>"
+            <div class="choice" id="C" onclick="checkAnswer('C')">A</div>"
+        </div>
+    </div>
+    <div id="scoreContainer" style="display : none;">
+        <img src="">
+        <p>50%</p>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
