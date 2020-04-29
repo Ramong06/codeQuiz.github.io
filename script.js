@@ -11,7 +11,7 @@ const choiceC = document.getElementById("C");
 const progress = document.getElementById("progress");
 const scoreContainer = document.getElementById("scoreContainer");
 
-let questions = [
+let quizQuestions = [
     {
         question : "What does HTML stand for?",
         choiceA : "Hyperlinks and Tested Markup Language",
@@ -25,14 +25,21 @@ let questions = [
         choiceB : "Cool Stuff Sheet",
         choiceC : "Compilied Styling Sheets",
         correct : "A"  
-    }
+    },
     {
         question : "In Javascript. What is another way to type \"if (var === true) {};\" ",
         choiceA : "if (!var) {};",
         choiceB : "else (var ==> 0); {}",
         choiceC : "if (var) {};",
         correct : "C"
-    }
+    },
+    {
+        question : "In Javascript. How can I declare \"var x = 5;\" inside ONE specific block if \"var x = 10;\" has been declared globally?",
+        choiceA : "let = 5;",
+        choiceB : "else if (var = 5);",
+        choiceC : "Both A and B are correct",
+        correct : "A"  
+    },
     {
         question : "*BONUS* What is my cat's name?",
         choiceA : "Jack",
@@ -42,3 +49,6 @@ let questions = [
     }
 
 ]
+
+
+//Javascript delay function will be used for this homework assignment!
