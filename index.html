@@ -8,25 +8,23 @@
 </head>
 
 <body>
-    <div id="Start">View High Scores</div>
-    <div id="quiz" style="display : none;">
-        <div id="question"><p>Question</p></div>
-        <div id="timer">
-            <div id="btimeGauge"></div>
-            <div id="timeGauge"></div>
-        </div>
-
-        <div id="choices">
-            <div class="choice" id="A" onclick="checkAnswer('A')">A</div>"
-            <div class="choice" id="B" onclick="checkAnswer('B')">A</div>"
-            <div class="choice" id="C" onclick="checkAnswer('C')">A</div>"
+    <div class="container">
+        <div id="question-container" class="hide"></div>
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
     </div>
-    <div id="scoreContainer" style="display : none;">
-        <img src="">
-        <p>50%</p>
-    </div>
 
-  <script src="script.js"></script>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
