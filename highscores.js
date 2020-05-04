@@ -1,6 +1,7 @@
 var scoreInput = document.querySelector("#scores-text");
 var scoreForm = document.querySelector("#scores-form");
 var scoreList = document.querySelector("#scores-list");
+var clearBtn = document.querySelector("#clear-btn");
 
 var scores = [];
 
@@ -53,3 +54,10 @@ scoreForm.addEventListener("submit", function(event) {
   storeScores();
   renderScores();
 });
+
+function clear (scoreInput) {
+    window.localStorage.clear();
+    scoreInput.innerHTML = "";
+    clearBtn.addEventListener("click", clear);
+}
+

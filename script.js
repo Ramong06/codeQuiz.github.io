@@ -119,12 +119,14 @@ function selectAnswer(choices) {
             nextButton.classList.remove("hide");
         }
         else {
-            startButton.innerText = "Restart Quiz";
-            startButton.classList.remove("hide");
+            //startButton.innerText = "Restart Quiz";
+            //startButton.classList.remove("hide");
             //score = (score * 20);
             finalScoreEl.textContent = score;
             showScore.classList.remove("hide");
             submitButton.classList.remove("hide");
+            questionElement.classList.add("hide");
+            answerButtonsElement.classList.add("hide");
         }
     })
 }
@@ -133,7 +135,7 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
        element.classList.add("correct");
-       score++;
+       score++ - 1;
        console.log(score);
     }
     else {
