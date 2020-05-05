@@ -101,6 +101,10 @@ color: black;
     text-decoration: none;
 }
 
+#timer {
+    text-align: right;
+}
+
 /* High Scores Page CSS starts here.*/
 
 .scores-page {

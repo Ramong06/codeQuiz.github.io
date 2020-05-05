@@ -1,12 +1,14 @@
 // Constants and Arrays used 
-const startButton = document.getElementById("start-btn");
-const nextButton = document.getElementById("next-btn");
-const questionContainerElement = document.getElementById("question-container");
-const questionElement = document.getElementById("question");
-const answerButtonsElement = document.getElementById("answer-buttons");
-const submitButton = document.getElementById("submit-btn");
-const showScore = document.getElementById("score");
-const introWords = document.getElementById("intro-words")
+let timeEl = document.querySelector("timer");
+var startBtn = document.querySelector("#start");
+var startButton = document.getElementById("start-btn");
+var nextButton = document.getElementById("next-btn");
+var questionContainerElement = document.getElementById("question-container");
+var questionElement = document.getElementById("question");
+var answerButtonsElement = document.getElementById("answer-buttons");
+var submitButton = document.getElementById("submit-btn");
+var showScore = document.getElementById("score");
+var introWords = document.getElementById("intro-words")
 var finalScoreEl = document.getElementById("finalscore")
 
 let quizQuestions;
@@ -71,7 +73,24 @@ startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
     setNextQuestion();
-})
+});
+
+var secondsLeft = 100;
+
+function startTimer() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl = secondsLeft + " TIME: ";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      //sendMessage();
+    }
+
+  }, 1000);
+}
+
+startTimer();
 
 function startGame() {
     startButton.classList.add("hide");
@@ -80,6 +99,7 @@ function startGame() {
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove("hide");
     setNextQuestion();
+    startTimer();
 }
 
 function setNextQuestion() {
@@ -119,9 +139,6 @@ function selectAnswer(choices) {
             nextButton.classList.remove("hide");
         }
         else {
-            //startButton.innerText = "Restart Quiz";
-            //startButton.classList.remove("hide");
-            //score = (score * 20);
             finalScoreEl.textContent = score;
             showScore.classList.remove("hide");
             submitButton.classList.remove("hide");
@@ -135,8 +152,7 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
        element.classList.add("correct");
-       score++ - 1;
-       console.log(score);
+       score++ * 10;
     }
     else {
         element.classList.add("wrong")
